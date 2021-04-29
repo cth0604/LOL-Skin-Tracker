@@ -32,14 +32,21 @@ app.use(cors(corsOptions));
 app.use("/api/champions", championsRouter);
 app.use("/api/skins", skinsRouter);
 app.use("/api/wishlist", wishlistRouter);
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
-});
+if (
+  process.env.NODE_ENV === "production" ||
+  process.env.NODE_ENV === "staging"
+) {
+  app.use(express.static(path.join(__dirname, "client/build")));
 
-// // catch 404 and forward to error handler
-// app.use("*", function (req, res, next) {
-//   next(createError(404));
-// });
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
+
+// catch 404 and forward to error handler
+app.use("*", function (req, res, next) {
+  next(createError(404));
+});
 
 // error handler
 app.use((error, req, res, next) => {
