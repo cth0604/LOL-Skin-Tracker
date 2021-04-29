@@ -1,5 +1,3 @@
-const async = require("async");
-
 const User = require("../models/user");
 const Champion = require("../models/champion");
 const Skin = require("../models/skin");
