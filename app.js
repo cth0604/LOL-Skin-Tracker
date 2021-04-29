@@ -28,26 +28,24 @@ var corsOptions = {
   credentials: true,
 };
 app.use(cors(corsOptions));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 app.use("/api/champions", championsRouter);
 app.use("/api/skins", skinsRouter);
 app.use("/api/wishlist", wishlistRouter);
 if (
-  true ||
   process.env.NODE_ENV === "production" ||
   process.env.NODE_ENV === "staging"
 ) {
-  app.use(express.static(path.join(__dirname, "client/build")));
-
   app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "client/build", "index.html"));
   });
 }
 
 // catch 404 and forward to error handler
-app.use("*", function (req, res, next) {
-  next(createError(404));
-});
+// app.use("*", function (req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use((error, req, res, next) => {
