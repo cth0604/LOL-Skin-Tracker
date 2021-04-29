@@ -33,6 +33,7 @@ app.use("/api/champions", championsRouter);
 app.use("/api/skins", skinsRouter);
 app.use("/api/wishlist", wishlistRouter);
 if (
+  true ||
   process.env.NODE_ENV === "production" ||
   process.env.NODE_ENV === "staging"
 ) {
