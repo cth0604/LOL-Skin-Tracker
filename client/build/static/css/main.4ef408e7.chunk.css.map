@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/home/carousel.css"],"names":[],"mappings":"AAAA,mBACE,aAAc,CACd,cACF,CAEA,mBACE,aAAc,CACd,eACF","file":"main.4ef408e7.chunk.css","sourcesContent":[".slick-prev:before {\r\n  color: #3f51b5;\r\n  font-size: 20px;\r\n}\r\n\r\n.slick-next:before {\r\n  color: #3f51b5;\r\n  font-size: 20Cpx;\r\n}"]}
