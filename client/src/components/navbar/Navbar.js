@@ -45,7 +45,7 @@ function Navbar(props) {
           variant="outlined"
           color="secondary"
           className={classes.leftButton}
-          onClick={logout}
+          onClick={() => logout({ returnTo: window.location.origin })}
         >
           SIGN OUT
         </Button>
