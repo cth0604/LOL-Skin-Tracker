@@ -72,8 +72,7 @@ function Navbar(props) {
         <Button
           variant="outlined"
           color="secondary"
-          component={Link}
-          to="/sign-up"
+          onClick={loginWithRedirect}
         >
           SIGN UP
         </Button>
