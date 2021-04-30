@@ -13,6 +13,7 @@
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
   },
   "dependencies": {
+    "async": "^3.2.0",
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.18.3",
