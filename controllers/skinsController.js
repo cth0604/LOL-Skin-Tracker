@@ -1,5 +1,5 @@
 const Skin = require("../models/skin");
-//const async = require("async");
+const async = require("async");
 
 exports.getSkins = function (req, res, next) {
   Skin.find({}, "name imageURL").exec((err, skins) => {
