@@ -1,5 +1,5 @@
 const Champion = require("../models/champion");
-const async = require("async");
+//const async = require("async");
 
 exports.getChampions = function (req, res, next) {
   Champion.find({}, "name imageURL championID").exec((err, champions) => {
