@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const Champion = require("../models/champion");
 const Skin = require("../models/skin");
+const async = require("async");
 
 exports.checkChampionWishlisted = function (req, res, next) {
   User.findOne({ email: req.params.email }, "wishlist")
