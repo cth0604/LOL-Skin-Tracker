@@ -4,6 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var cors = require("cors");
+var compression = require('compression');
+var helmet = require('helmet');
 require("dotenv").config();
 
 var championsRouter = require("./routes/champions");
@@ -19,6 +21,8 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 
 var app = express();
 
+app.use(helmet());
+app.use(compression());
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
